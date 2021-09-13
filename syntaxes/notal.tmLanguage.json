@@ -1,0 +1,122 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Notasi Algoritmik",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#storages"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#datatypes"
+    }
+  ],
+  "repository": {
+    "datatypes": {
+      "patterns": [
+        {
+          "name": "constant.numeric.notal",
+          "match": "\\s+(\\d+|true|false)\\s+"
+        },
+        {
+          "name": "entity.name.type",
+          "match": "integer|real|boolean|char"
+        },
+        {
+          "match": "\\w+\\.(\\w+)",
+          "captures": {
+            "1": {
+              "name": "constant.character"
+            }
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.notal",
+          "match": "\\b(if|while|tranversal|do|then|else|repeat|stop)\\b"
+        },
+        {
+          "name": "markup.heading.notal",
+          "match": "\\b(ALGORITMA|KAMUS|KAMUS|LOKAL)\\b"
+        },
+        {
+          "name": "keyword.other.notal",
+          "match": "input|output"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.notal",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.notal",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.control",
+          "match": "and|or|xor|not"
+        },
+        {
+          "name": "keyword.operator.notal",
+          "match": "\\^|\\*|/|-|\\+"
+        },
+        {
+          "name": "keyword.operator.notal",
+          "match": "shl|shr"
+        }
+      ]
+    },
+    "storages": {
+      "patterns": [
+        {
+          "match": "(function|procedure)(.+)\\(",
+          "captures": {
+            "1": {
+              "name": "storage.modifier.notal"
+            },
+            "2": {
+              "name": "entity.name.function.notal"
+            }
+          }
+        },
+        {
+          "match": "(\\w+)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.notal"
+            }
+          }
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.notal",
+          "begin": "{",
+          "end": "}"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.notal"
+}

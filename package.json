@@ -1,0 +1,25 @@
+{
+    "name": "notal-syntax-highlighter",
+    "displayName": "Notal Syntax Highlighter",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "notal",
+            "aliases": ["Notasi Algoritmik", "notal"],
+            "extensions": [".notal"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "notal",
+            "scopeName": "source.notal",
+            "path": "./syntaxes/notal.tmLanguage.json"
+        }]
+    }
+}
