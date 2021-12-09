@@ -1,6 +1,6 @@
 # Notal Syntax Highlighter
 
-Notasi Algoritmik Highlighter untuk Mata Kuliah Alstrukdat dan Daspro.
+Notasi Algoritmik Highlighter untuk Mata Kuliah Alstrukdat dan Daspro. Semoga Bermanfaat.
 
 ## Cara install
 
