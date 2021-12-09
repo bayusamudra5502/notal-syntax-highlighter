@@ -26,14 +26,20 @@
       "patterns": [
         {
           "name": "constant.numeric.notal",
-          "match": "\\s+(\\d+|true|false)\\s+"
+          "match": "\\s*(\\d+|true|false)\\s*"
         },
         {
-          "name": "entity.name.type",
-          "match": "integer|real|boolean|char"
+          "match": "\\w[\\d\\w\\_]+",
+          "name": "entity.name"
         },
         {
-          "match": "\\w+\\.(\\w+)",
+          "match": "(\\s*:|\\s*\\-\\>)(\\s*\\w[\\w\\d]+)",
+          "captures": {
+            "2": { "name": "entity.name.type" }
+          }
+        },
+        {
+          "match": "\\.(\\w[\\w\\d]+)",
           "captures": {
             "1": {
               "name": "constant.character"
@@ -46,15 +52,26 @@
       "patterns": [
         {
           "name": "keyword.control.notal",
-          "match": "\\b(if|while|tranversal|do|then|else|repeat|stop)\\b"
+          "match": "\\s*(if|while|tranversal|do|then|else|repeat|stop)\\s*"
         },
         {
-          "name": "markup.heading.notal",
-          "match": "\\b(ALGORITMA|KAMUS|KAMUS|LOKAL)\\b"
+          "name": "keyword.other.notal",
+          "match": "\\s*(type|use|program|constant|const)\\s*"
+        },
+        {
+          "name": "markup.bold.notal",
+          "match": "\\s*(ALGORITMA|KAMUS|LOKAL)\\s*"
         },
         {
           "name": "keyword.other.notal",
           "match": "input|output"
+        },
+        {
+          "match": "\\s*(of)\\s*(\\w[\\w\\d]+)",
+          "captures": {
+            "1": { "name": "keyword.other" },
+            "2": { "name": "entity.name.type" }
+          }
         }
       ]
     },
@@ -80,8 +97,8 @@
           "match": "\\^|\\*|/|-|\\+"
         },
         {
-          "name": "keyword.operator.notal",
-          "match": "shl|shr"
+          "name": "keyword.control.notal",
+          "match": "shl|shr|div|mod"
         }
       ]
     },
