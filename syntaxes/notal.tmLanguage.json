@@ -52,7 +52,7 @@
       "patterns": [
         {
           "name": "keyword.control.notal",
-          "match": "\\s*(if|while|tranversal|do|then|else|repeat|stop)\\s*"
+          "match": "\\s*(if|while|tranversal|do|then|else|repeat|stop|iterate|stop)\\s*"
         },
         {
           "name": "keyword.other.notal",
