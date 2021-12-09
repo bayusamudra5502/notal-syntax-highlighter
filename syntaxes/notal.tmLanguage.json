@@ -26,7 +26,7 @@
       "patterns": [
         {
           "name": "constant.numeric.notal",
-          "match": "\\s*(\\d+|true|false)\\s*"
+          "match": "\\b(\\d+|true|false)\\b"
         },
         {
           "match": "\\w[\\d\\w\\_]+",
@@ -52,22 +52,22 @@
       "patterns": [
         {
           "name": "keyword.control.notal",
-          "match": "\\s*(if|while|tranversal|do|then|else|repeat|stop|iterate|stop)\\s*"
+          "match": "\\b(if|while|tranversal|do|then|else|repeat|stop|iterate|stop|depend|on)\\b"
         },
         {
           "name": "keyword.other.notal",
-          "match": "\\s*(type|use|program|constant|const)\\s*"
+          "match": "\\b(type|use|program|constant|const)\\b"
         },
         {
           "name": "markup.bold.notal",
-          "match": "\\s*(ALGORITMA|KAMUS|LOKAL)\\s*"
+          "match": "\\b(ALGORITMA|KAMUS|LOKAL)\\b"
         },
         {
           "name": "keyword.other.notal",
-          "match": "input|output"
+          "match": "\\b(input|output)\\b"
         },
         {
-          "match": "\\s*(of)\\s*(\\w[\\w\\d]+)",
+          "match": "\\b(of)\\b(\\w[\\w\\d]+)",
           "captures": {
             "1": { "name": "keyword.other" },
             "2": { "name": "entity.name.type" }
